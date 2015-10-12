@@ -1,11 +1,7 @@
-<div class ="panel-body">
-    <div class="container">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-2">
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
             <%= gravatar_for @user %>
-        </div>
-        <div class="col-md-4">
             <span class ="label label-info">名前</span>
             <span class ="label label-danger"><%= @user.name %></span>
             <br>
@@ -14,9 +10,22 @@
             <br>
             <br>
             <span class ="label label-warning"><%= link_to "[edit]" , edit_user_path %></span>
-        </div>
-        <div class="col-md-3">
-        </div>
+    </section>
+  </aside>
+    <div class="col-md-8">
+    
+    <% if @user.microposts.any? %>
+
+      <h3>Microposts (
+        <%= @user.microposts.count %>
+    )</h3>
+      <ol class="microposts">
         
+        <%= render @microposts %>
+
+      </ol>
+    
+    <% end %>
+
     </div>
 </div>
