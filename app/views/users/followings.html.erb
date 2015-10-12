@@ -1,0 +1,9 @@
+<h1>フォローしているユーザー</h1>
+
+
+ <% if @following.any? %>
+      <h3>following (<%= @following.count %>)</h3>
+      <ol class="microposts">
+<%= render partial: 'relationships/following', collection: @following %>
+      </ol>
+    <% end %>

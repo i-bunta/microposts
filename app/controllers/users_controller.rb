@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show,:edit,:update,:destroy]
+  before_action :set_user, only: [:followers,:followings,:show,:edit,:update,:destroy]
   
   def show # 追加
    @microposts = @user.microposts
+   
   end
   
   def new
@@ -31,7 +32,13 @@ class UsersController < ApplicationController
     end
   end
   
+  def followings
+    @following = @user.following_users
+  end
   
+  def followers
+    @follower = @user.follower_users
+  end
   
   
   private

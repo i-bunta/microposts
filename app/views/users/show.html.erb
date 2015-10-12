@@ -9,12 +9,15 @@
             <span class ="label label-danger"><%= @user.city %></span>
             <br>
             <br>
+            <span class ="label label-warning"><%= link_to "[フォロー]" , followings_user_path %></span>
+            <span class ="label label-warning"><%= link_to "[フォロワー]" , followers_user_path %></span>
             <span class ="label label-warning"><%= link_to "[edit]" , edit_user_path %></span>
     </section>
   </aside>
     <div class="col-md-8">
       
     <%= render 'follow_form' if logged_in? %>
+    
     
     <% if @user.microposts.any? %>
 
@@ -28,6 +31,11 @@
       </ol>
     
     <% end %>
+
+
+
+
+    
 
     </div>
 </div>
