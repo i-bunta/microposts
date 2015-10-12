@@ -1,8 +1,22 @@
-<h1>
-  
-<%= gravatar_for @user %>
-
-  
-<%= @user.name %>
-
-</h1>
+<div class ="panel-body">
+    <div class="container">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-2">
+            <%= gravatar_for @user %>
+        </div>
+        <div class="col-md-4">
+            <span class ="label label-info">名前</span>
+            <span class ="label label-danger"><%= @user.name %></span>
+            <br>
+            <span class ="label label-info">住んでいる場所</span>
+            <span class ="label label-danger"><%= @user.city %></span>
+            <br>
+            <br>
+            <span class ="label label-warning"><%= link_to "[edit]" , edit_user_path %></span>
+        </div>
+        <div class="col-md-3">
+        </div>
+        
+    </div>
+</div>
